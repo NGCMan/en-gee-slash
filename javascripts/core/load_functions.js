@@ -2324,6 +2324,9 @@ function new_game(id) {
 		alert("Coming soon...")
 		return
 	}
+    if (modes.ngslash == 1) {
+    modes.ngmm = 2
+  }
 	save_game(true)
 	clearInterval(gameLoopIntervalId)
 	updateNewPlayer()
@@ -2356,6 +2359,10 @@ function new_game(id) {
 	showBranchTab('red')
 	showGhostifyTab('neutrinos')
 	showBLTab('bextab')
+  
+    if (modes.ngslash == 1) {
+    activateNGSlash()
+  }
 }
 
 function transformSaveToDecimal() {
