@@ -2326,6 +2326,7 @@ function new_game(id) {
 	}
     if (modes.ngslash == 1) {
     modes.ngmm = 2
+    modes.ngpp = 2
   }
 	save_game(true)
 	clearInterval(gameLoopIntervalId)
