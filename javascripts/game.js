@@ -28,7 +28,8 @@ var modes = {
     ngud: 0,
     nguep: 0,
     ngmu: 0,
-    ngumu: 0
+    ngumu: 0,
+    ngslash: 0
 }
 
 
@@ -4773,6 +4774,16 @@ function toggle_mode(id) {
         while (!(modes.ngud > 1)) {
           toggle_mode("ngud");
         }
+      }
+}
+
+function updateNGSlash() {
+        if (modes.ngslash == 0) {
+        modes.ngslash += 1
+        document.getElementById("ngslashBtn").textContent = "NG/: ON"
+      } else if (modes.ngslash >= 0) {
+        modes.ngslash = 0
+        document.getElementById("ngslashBtn").textContent = "NG/: OFF"
       }
 }
 
