@@ -1970,6 +1970,9 @@ function getGalaxyRequirement(offset = 0, display) {
     if (player.aarexModifications.ngmX > 3) {
       amount -= 10;
     }
+    if (modes.ngslash == 1) {
+      amount = 60 + base;
+    }
     if (inNC(4) || player.pSac !== undefined) {
       amount = player.tickspeedBoosts == undefined ? 99 + base : amount + (player.aarexModifications.ngmX > 3 ? 20 : -30);
     }
@@ -2058,6 +2061,13 @@ function getGalaxyReqMultiplier(ts) {
       return 60;
     }
     let ret = 60;
+    if (modes.ngslash == 1) {
+      if (player.galaxies < 1) {
+      ret = 20;
+      } else {
+        ret = 60
+      }
+    }
     if (player.galacticSacrifice) {
         if (player.galacticSacrifice.upgrades.includes(22)) {
           ret -= 30;
